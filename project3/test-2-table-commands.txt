@@ -1,0 +1,22 @@
+CREATE food 4 string int bool double name calories meat? servings
+GENERATE FOR food bst INDEX ON calories
+DELETE FROM food WHERE calories = 100
+INSERT INTO food 6 ROWS
+taco 400 true 2
+burger 700 true 1
+salad 300 false 2.5
+soup 5500 true 7.5
+egg 1000 false 10
+hotdog 600 true 2
+DELETE FROM food WHERE calories = 400
+DELETE FROM food WHERE calories < 400
+DELETE FROM food WHERE calories > 5000
+PRINT FROM food 2 name calories WHERE calories > 0
+INSERT INTO food 3 ROWS
+bec 450 true 1
+wrap 750 true 2
+sandwich 1600 true 3
+DELETE FROM food WHERE meat? = true
+DELETE FROM fod WHERE meat? = true
+DELETE FROM food WHERE met? = true
+QUIT

@@ -1,0 +1,31 @@
+CREATE stocks 5 string string double bool int name ticker price bullish? num_owned
+GENERATE FOR stocks hash INDEX ON name
+INSERT INTO stocks 8 ROWS
+tesla TSLA 412.36 true 0
+apple AAPL 120.00 true 2
+facebook FB 278.87 true 1
+delta DAL 37.98 true 4
+oil USO 28.81 false 0
+boeing BA 201.56 false 1
+draftkings DK 42.68 false 3
+wendys WNDY 4 true 4
+CREATE companies 3 string string double company product price
+GENERATE FOR companies hash INDEX ON company
+INSERT INTO companies 4 ROWS
+apple computer 999.99
+facebook website 0
+tesla car 60000
+delta flight 499.99
+wendys food 4
+JOIN stocks AND companies WHERE name = company AND PRINT 3 name 1 ticker 1 product 2
+JOIN companies AND stocks WHERE name = company AND PRINT 3 name 1 ticker 1 product 2
+JOIN stocks AND companies WHERE price = price AND PRINT 3 name 1 ticker 1 product 2
+JOIN companies AND stocks WHERE price = price AND PRINT 3 name 1 ticker 1 product 2
+GENERATE FOR stocks hash INDEX ON price
+JOIN stocks AND companies WHERE price = price AND PRINT 3 name 1 ticker 1 product 2
+JOIN companies AND stocks WHERE price = price AND PRINT 3 name 1 ticker 1 product 2
+JOIN stocks AND companies WHERE name = company AND PRINT 3 name 1 ticker 1 product 2
+JOIN companies AND stocks WHERE name = company AND PRINT 3 name 1 ticker 1 product 2
+REMOVE companies
+REMOVE stocks
+QUIT

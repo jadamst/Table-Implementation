@@ -1,0 +1,17 @@
+CREATE stocks 5 string string double bool int name ticker price bullish? num_owned
+INSERT INTO stocks 3 ROWS
+tesla TSLA 412.36 true 0
+apple AAPL 120.00 true 2
+facebook FB 278.87 true 1
+GENERATE FOR stocks bst INDEX ON num_owned
+INSERT INTO stocks 4 ROWS
+delta DAL 37.98 true 4
+oil USO 28.81 false 0
+boeing BA 201.56 false 1
+draftkings DK 42.68 false 3
+PRINT FROM stocks 2 name ticker WHERE num_owned = 1
+PRINT FROM stocks 2 name ticker WHERE num_owned = 5
+PRINT FROM stocks 2 name ticker WHERE num_owned > 2
+PRINT FROM stocks 2 name ticker WHERE num_owned < 2
+PRINT FROM stocks 2 name ticker WHERE num_owned = 2
+QUIT

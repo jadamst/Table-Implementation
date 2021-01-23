@@ -1,0 +1,34 @@
+# Checkpoint file 1: # (comment), CREATE, REMOVE, QUIT
+FAKE 281class 3 string string bool emotion person Y/N
+CREATE foods 3 string bool int name good number
+CREATE foods 3 string bool int name good number
+INSERT INTO drinks 2 ROWS
+soda false 1
+shake true 1
+INSERT INTO foods 3 ROWS
+grapes true 8
+oranges true 2
+mango true 3
+GENERATE FOR drinks bst INDEX ON taste
+GENERATE FOR foods hash INDEX ON taste
+GENERATE FOR foods hash INDEX ON name
+INSERT INTO foods 1 ROWS
+strawberry true 10
+DELETE FROM drinks WHERE taste = fruit
+DELETE FROM foods WHERE taste = fruit
+PRINT FROM drinks 2 name flavor WHERE taste = vanilla
+PRINT FROM foods 2 name flavor WHERE number = 8
+PRINT FROM foods 2 name number WHERE like = true
+PRINT FROM foods 2 type taste WHERE like = true
+DELETE FROM foods WHERE taste = fruit
+JOIN foods AND drinks WHERE name = taste AND PRINT 2 name 1 number 1
+CREATE drinks 2 string string name taste
+JOIN foods AND drinks WHERE name = taste AND PRINT 2 name 1 number 1
+INSERT INTO drinks 2 ROWS
+soda cherry
+shake fruit
+JOIN foods AND drinks WHERE name = flavor AND PRINT 2 name 1 number 1
+JOIN foods AND drinks WHERE name = taste AND PRINT 2 name 1 number 1
+REMOVE drinks
+REMOVE foods
+QUIT

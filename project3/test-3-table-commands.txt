@@ -1,0 +1,17 @@
+CREATE stocks 5 string string double bool int name ticker price bullish? num_owned
+GENERATE FOR stocks bst INDEX ON price
+INSERT INTO stocks 7 ROWS
+tesla TSLA 412.36 true 0
+apple AAPL 120.00 true 2
+facebook FB 278.87 true 1
+delta DAL 37.98 true 4
+oil USO 28.81 false 0
+boeing BA 201.56 false 1
+draftkings DK 42.68 false 3
+DELETE FROM stocks WHERE price > 100
+PRINT FROM stocks 3 name ticker bullish? WHERE price > 40
+GENERATE FOR stocks hash INDEX ON bullish?
+DELETE FROM stocks WHERE bullish? = false
+PRINT FROM stocks 3 name ticker bullish? WHERE bullish? = true
+REMOVE stocks
+QUIT

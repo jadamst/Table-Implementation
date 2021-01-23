@@ -1,0 +1,26 @@
+CREATE stocks 3 string string int name ticker price
+INSERT INTO stocks 3 ROWS
+boeing BA 200
+apple AAPL 120
+tesla TSLA 400
+GENERATE FOR stocks hash INDEX ON price
+INSERT INTO stocks 3 ROWS
+wendys WNDY 4
+delta DAL 30
+draftkings DK 40
+PRINT FROM stocks 2 name price WHERE name = boeing
+GENERATE FOR stocks bst INDEX ON name
+PRINT FROM stocks 2 name price WHERE name = boeing
+CREATE holders 3 string string int owner stock num_owned
+INSERT INTO holders 3 ROWS
+drake tesla 4
+josh boeing 30
+megan apple 120
+JOIN stocks AND holders WHERE price = num_owned AND PRINT 1 price 1
+GENERATE FOR holders bst INDEX ON num_owned
+JOIN stocks AND holders WHERE price = num_owned AND PRINT 1 price 1
+GENERATE FOR holders hash INDEX ON num_owned
+JOIN stocks AND holders WHERE price = num_owned AND PRINT 1 price 1
+GENERATE FOR holders bst INDEX ON num_owned
+JOIN stocks AND holders WHERE price = num_owned AND PRINT 1 price 1
+QUIT

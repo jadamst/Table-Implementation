@@ -1,0 +1,23 @@
+CREATE stocks 3 string string int name ticker price
+INSERT INTO stocks 3 ROWS
+boeing BA 200
+apple AAPL 120
+tesla TSLA 400
+GENERATE FOR stocks bst INDEX ON price
+PRINT FROM stocks 2 name price WHERE price = 120
+GENERATE FOR stocks hash INDEX ON price
+PRINT FROM stocks 2 name price WHERE price = 120
+INSERT INTO stocks 3 ROWS
+wendys WNDY 4
+delta DAL 30
+draftkings DK 40
+GENERATE FOR stocks bst INDEX ON name
+PRINT FROM stocks 2 name price WHERE name = boeing
+GENERATE FOR stocks hash INDEX ON name
+PRINT FROM stocks 2 name price WHERE name = boeing
+GENERATE FOR stocks bst INDEX ON name
+PRINT FROM stocks 2 name price WHERE name > boeing
+PRINT FROM stocks 2 name price WHERE name < delta
+PRINT FROM stocks 2 name price WHERE price > 50
+PRINT FROM stocks 2 name price WHERE name = tesla
+QUIT
